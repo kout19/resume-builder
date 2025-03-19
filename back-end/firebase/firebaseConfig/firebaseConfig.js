@@ -9,7 +9,7 @@ if(!fs.existsSync(serviceAccountPath)){
   process.exit(1);
 }
 const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf8"));
-console.log("Loaeded firebase credentials:", serviceAccount.project_id || "No Project ID found");
+console.log("Loaded firebase credentials:", serviceAccount.project_id || "No Project ID found");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
